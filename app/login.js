@@ -36,10 +36,9 @@ export default class App extends React.Component {
             Keyboard.dismiss()
           }}
         />
-        <Button
-          onPress={() => goBack()}
-          title="取消"
-        />
+        <Button onPress={() => goBack()}>
+          登录
+        </Button>
       </View>
     );
   }

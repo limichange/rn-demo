@@ -7,11 +7,14 @@ export default class App extends React.Component {
     super(props)
   }
   render() {
+    const { component, type, size, plain, className, children, ...others } = this.props;
+
     return (
       <Button
-        style={styles.signUpBtnText}
-        containerStyle={styles.signUpBtn}>
-        登录
+        { ...others }
+        style={[styles.signUpBtnText]}
+        containerStyle={[styles.signUpBtn]}>
+        {children}
       </Button>
     )
   }
