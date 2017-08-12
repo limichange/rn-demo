@@ -41,7 +41,7 @@ const AppNavigator = StackNavigator(
     }
   },
   {
-    initialRouteName: 'home',
+    initialRouteName: 'login',
     headerMode: 'none',
     mode: Platform.OS === 'ios' ? 'modal' : 'card',
   }
