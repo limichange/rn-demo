@@ -24,6 +24,7 @@ export default class App extends React.Component {
             this.refs.passwordInput.focus();
           }}
         />
+        
         <TextInput
           returnKeyType={'done'}
           ref='passwordInput'
