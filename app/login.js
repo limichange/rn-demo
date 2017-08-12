@@ -62,10 +62,12 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginLeft: 50,
     marginRight: 50,
-    height: 40,
+    height: 50,
     fontSize: 25,
     borderBottomColor: '#bbb',
     borderBottomWidth: 1,
+    paddingTop: 3,
+    paddingBottom: 3,
     paddingLeft: 10
   }
 });
