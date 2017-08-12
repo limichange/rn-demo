@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
+import Button from 'react-native-button';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -15,16 +16,18 @@ export default class App extends React.Component {
         <Text style={styles.title}>自</Text>
         <Text style={styles.title}>留</Text>
         <Text style={styles.title}>地</Text>
-        <View 
-          style={styles.loginBtn} 
+        <Button
+          style={styles.loginBtnText}
+          containerStyle={styles.loginBtn}
           onPress={this.onShow}>
-          <Text style={styles.loginBtnText}>登录</Text>
-        </View>
-        <View 
-          style={styles.signUpBtn} 
+          登录
+        </Button>
+        <Button
+          style={styles.signUpBtnText}
+          containerStyle={styles.signUpBtn}
           onPress={this.onShow}>
-          <Text style={styles.signUpBtnText}>注册</Text>
-        </View>
+          注册
+        </Button>
       </View>
     );
   }
