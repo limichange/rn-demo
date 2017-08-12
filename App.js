@@ -18,12 +18,12 @@ export default class App extends React.Component {
         <View 
           style={styles.loginBtn} 
           onPress={this.onShow}>
-          <Text style={styles.btnText}>登录</Text>
+          <Text style={styles.loginBtnText}>登录</Text>
         </View>
         <View 
           style={styles.signUpBtn} 
           onPress={this.onShow}>
-          <Text style={styles.btnText}>注册</Text>
+          <Text style={styles.signUpBtnText}>注册</Text>
         </View>
       </View>
     );
@@ -32,7 +32,7 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 100
+    marginTop: 120
   },
   title: {
     textAlign: 'center',
@@ -40,25 +40,35 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     fontSize: 50
   },
-  btnText: {
+  loginBtnText: {
     textAlign: 'center',
     fontFamily: 'PingFang SC',
     fontWeight: '300',
     fontSize: 20,
-    lineHeight: 40
+    lineHeight: 40,
+    color: 'white'
+  },
+  signUpBtnText: {
+    textAlign: 'center',
+    fontFamily: 'PingFang SC',
+    fontWeight: '300',
+    fontSize: 20,
+    lineHeight: 40,
+    color: '#666'
   },
   loginBtn: {
-    marginTop: 70,
-    marginLeft: 90,
-    marginRight: 90,
-    borderColor: '#777',
-    borderWidth: 1
+    marginTop: 80,
+    marginLeft: 85,
+    marginRight: 85,
+    backgroundColor: '#666',
+    borderColor: '#666',
+    borderWidth: 2
   },
   signUpBtn: {
     marginTop: 30,
-    marginLeft: 90,
-    marginRight: 90,
-    borderColor: '#777',
-    borderWidth: 1
+    marginLeft: 85,
+    marginRight: 85,
+    borderColor: '#666',
+    borderWidth: 2
   }
 });
