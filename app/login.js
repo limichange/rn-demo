@@ -11,8 +11,14 @@ export default class App extends React.Component {
       password: ''
     };
   }
-  login () {
-    api.user.login()
+  login ({ username, password }) {
+    api
+      .user
+      .login({ username, password })
+      .then(res => {
+        // alert(res.data.username)
+        // alert(res.data.password)
+      })
   }
   render() {
     const { goBack } = this.props.navigation
@@ -40,7 +46,7 @@ export default class App extends React.Component {
             Keyboard.dismiss()
           }}
         />
-        <Button onPress={this.login}>
+        <Button onPress={() => this.login(this.state)}>
           登录
         </Button>
 
