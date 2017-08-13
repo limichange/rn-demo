@@ -1,3 +1,4 @@
+import api from './api'
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Image, Keyboard } from 'react-native';
 import Button from './components/button'
@@ -11,7 +12,7 @@ export default class App extends React.Component {
     };
   }
   login () {
-    // alert(JSON.stringify(this))
+    api.user.login()
   }
   render() {
     const { goBack } = this.props.navigation
