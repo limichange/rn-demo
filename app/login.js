@@ -10,6 +10,9 @@ export default class App extends React.Component {
       password: ''
     };
   }
+  login () {
+    // alert(JSON.stringify(this))
+  }
   render() {
     const { goBack } = this.props.navigation
     
@@ -36,8 +39,12 @@ export default class App extends React.Component {
             Keyboard.dismiss()
           }}
         />
-        <Button onPress={() => goBack()}>
+        <Button onPress={this.login}>
           登录
+        </Button>
+
+        <Button onPress={() => goBack()}>
+          取消
         </Button>
       </View>
     );
