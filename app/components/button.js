@@ -7,13 +7,15 @@ export default class App extends React.Component {
     super(props)
   }
   render() {
-    const { component, type, size, plain, className, children, ...others } = this.props;
+    const { component, type, size, plain, className, children, style, containerStyle, ...others } = this.props;
+
+    console.log(this.props)
 
     return (
       <Button
         { ...others }
-        style={[styles.signUpBtnText]}
-        containerStyle={[styles.signUpBtn]}>
+        style={[type === 'normal' ? styles.normalBtnText : styles.signUpBtnText, style]}
+        containerStyle={[type === 'normal' ? styles.normalBtn : styles.signUpBtn, containerStyle]}>
         {children}
       </Button>
     )
@@ -21,7 +23,7 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  loginBtnText: {
+  normalBtnText: {
     textAlign: 'center',
     fontFamily: 'PingFang SC',
     fontWeight: '300',
@@ -37,18 +39,12 @@ const styles = StyleSheet.create({
     lineHeight: 40,
     color: '#666'
   },
-  loginBtn: {
-    marginTop: 80,
-    marginLeft: 85,
-    marginRight: 85,
+  normalBtn: {
     backgroundColor: '#666',
     borderColor: '#666',
     borderWidth: 2
   },
   signUpBtn: {
-    marginTop: 30,
-    marginLeft: 85,
-    marginRight: 85,
     borderColor: '#666',
     borderWidth: 2
   }

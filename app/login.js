@@ -2,6 +2,7 @@ import api from './api'
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Image, Keyboard } from 'react-native';
 import Button from './components/button'
+import storage from './storage'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,8 +17,11 @@ export default class App extends React.Component {
       .user
       .login({ username, password })
       .then(res => {
-        // alert(res.data.username)
-        // alert(res.data.password)
+        if (res.data.code === 200) {
+          alert('登录成功')
+        } else {
+          alert('登录失败，请重试')
+        }
       })
   }
   render() {
@@ -46,11 +50,11 @@ export default class App extends React.Component {
             Keyboard.dismiss()
           }}
         />
-        <Button onPress={() => this.login(this.state)}>
+        <Button type="normal" containerStyle={styles.button} onPress={() => this.login(this.state)}>
           登录
         </Button>
 
-        <Button onPress={() => goBack()}>
+        <Button containerStyle={styles.button} onPress={() => goBack()}>
           取消
         </Button>
       </View>
@@ -60,7 +64,13 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 120
+    marginTop: 120,
+    marginBottom: 10
+  },
+  button: {
+    marginBottom: 20,
+    marginLeft: 80,
+    marginRight: 80
   },
   title: {
     textAlign: 'center',
@@ -72,9 +82,9 @@ const styles = StyleSheet.create({
   input: {
     fontFamily: 'PingFang SC',
     fontWeight: '200',
-    marginTop: 30,
     marginLeft: 50,
     marginRight: 50,
+    marginBottom: 30,
     height: 50,
     fontSize: 25,
     borderBottomColor: '#bbb',
