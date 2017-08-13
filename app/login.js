@@ -34,6 +34,7 @@ export default class App extends React.Component {
           returnKeyType={'next'}
           style={styles.input}
           placeholder="手机号"
+          keyboardType={'numbers-and-punctuation'}
           onChangeText={(username) => this.setState({ username })}
           onSubmitEditing={(event) => {
             this.refs.passwordInput.focus();
@@ -45,16 +46,22 @@ export default class App extends React.Component {
           ref='passwordInput'
           style={styles.input}
           placeholder="密码"
+          secureTextEntry={true}
           onChangeText={(password) => this.setState({ password })}
           onSubmitEditing={(event) => {
             Keyboard.dismiss()
           }}
         />
-        <Button type="normal" containerStyle={styles.button} onPress={() => this.login(this.state)}>
+        <Button 
+          type="normal" 
+          containerStyle={styles.button} 
+          onPress={() => this.login(this.state)}>
           登录
         </Button>
 
-        <Button containerStyle={styles.button} onPress={() => goBack()}>
+        <Button 
+          containerStyle={styles.button} 
+          onPress={() => goBack()}>
           取消
         </Button>
       </View>

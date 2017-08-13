@@ -33,6 +33,7 @@ export default class App extends React.Component {
         <TextInput
           returnKeyType={'next'}
           style={styles.input}
+          keyboardType={'numbers-and-punctuation'}
           placeholder="手机号"
           onChangeText={(username) => this.setState({ username })}
           onSubmitEditing={(event) => {
@@ -41,20 +42,22 @@ export default class App extends React.Component {
         />
 
         <TextInput
-          returnKeyType={'done'}
+          returnKeyType={'next'}
           ref='passwordInput'
           style={styles.input}
+          secureTextEntry={true}
           placeholder="密码"
           onChangeText={(password) => this.setState({ password })}
           onSubmitEditing={(event) => {
-            Keyboard.dismiss()
+            this.refs.passwordInput2.focus();
           }}
         />
 
         <TextInput
           returnKeyType={'done'}
-          ref='passwordInput'
+          ref='passwordInput2'
           style={styles.input}
+          secureTextEntry={true}
           placeholder="密码确认"
           onChangeText={(password) => this.setState({ password })}
           onSubmitEditing={(event) => {
