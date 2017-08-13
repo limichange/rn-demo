@@ -12,8 +12,8 @@ export default class App extends React.Component {
     phone: '',
     password: ''
   }
-  login ({ phone, password }) {
-    alert(this.state.phone)
+  login () {
+    const { phone, password } = this.state
     api
       .user
       .login({ phone, password })
@@ -56,7 +56,7 @@ export default class App extends React.Component {
         <Button 
           type="normal" 
           containerStyle={styles.button} 
-          onPress={() => this.login(this.state)}>
+          onPress={() => this.login()}>
           登录
         </Button>
 

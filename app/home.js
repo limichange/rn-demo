@@ -1,3 +1,9 @@
+/**
+ * @author limichange
+ * 
+ * 这里是整个应用的入口
+ */
+
 import React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import Button from 'react-native-button';

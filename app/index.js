@@ -16,6 +16,7 @@ import home from './home'
 import about from './about'
 import login from './login'
 import signup from './signup'
+import debugPanel from './debugPanel'
 
 const AppNavigator = StackNavigator(
   {
@@ -34,6 +35,11 @@ const AppNavigator = StackNavigator(
       description: 'home',
       screen: home,
     },
+    debugPanel: {
+      name: 'debugPanel',
+      description: 'debugPanel',
+      screen: debugPanel,
+    },
     about: {
       name: 'about',
       description: 'about',
@@ -41,7 +47,7 @@ const AppNavigator = StackNavigator(
     }
   },
   {
-    initialRouteName: 'home',
+    initialRouteName: 'debugPanel',
     headerMode: 'none',
     mode: Platform.OS === 'ios' ? 'modal' : 'card',
   }
