@@ -6,16 +6,17 @@ import storage from './storage'
 
 export default class App extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { 
-      username: '',
-      password: ''
-    };
+    super(props)
   }
-  login ({ username, password }) {
+  state = {
+    phone: '',
+    password: ''
+  }
+  login ({ phone, password }) {
+    alert(this.state.phone)
     api
       .user
-      .login({ username, password })
+      .login({ phone, password })
       .then(res => {
         if (res.data.code === 200) {
           alert('登录成功')
@@ -35,7 +36,7 @@ export default class App extends React.Component {
           style={styles.input}
           placeholder="手机号"
           keyboardType={'numbers-and-punctuation'}
-          onChangeText={(username) => this.setState({ username })}
+          onChangeText={(phone) => this.setState({ phone })}
           onSubmitEditing={(event) => {
             this.refs.passwordInput.focus();
           }}

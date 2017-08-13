@@ -4,21 +4,21 @@ import axios from 'axios'
 
 export default {
   user: {
-    login ({ username, password }) {
+    login ({ phone, password }) {
       return axios({
         url: URL + 'account/login',
         method: 'post',
         data: {
-          username, password
+          phone, password
         }
       })
     },
-    signup({ username, password }) {
+    signup({ phone, password }) {
       return axios({
         url: URL + 'account/signup',
         method: 'post',
         data: {
-          username, password
+          phone, password
         }
       })
     }

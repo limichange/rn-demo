@@ -8,14 +8,14 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      phone: '',
       password: ''
     };
   }
-  signup({ username, password }) {
+  signup({ phone, password }) {
     api
       .user
-      .signup({ username, password })
+      .signup({ phone, password })
       .then(res => {
         if (res.data.code === 200) {
           alert('登录成功')
@@ -35,7 +35,7 @@ export default class App extends React.Component {
           style={styles.input}
           keyboardType={'numbers-and-punctuation'}
           placeholder="手机号"
-          onChangeText={(username) => this.setState({ username })}
+          onChangeText={(phone) => this.setState({ phone })}
           onSubmitEditing={(event) => {
             this.refs.passwordInput.focus();
           }}
