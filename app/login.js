@@ -33,7 +33,7 @@ export default class App extends React.Component {
         <TextInput
           returnKeyType={'next'}
           style={styles.input}
-          placeholder="用户名"
+          placeholder="手机号"
           onChangeText={(username) => this.setState({ username })}
           onSubmitEditing={(event) => {
             this.refs.passwordInput.focus();
@@ -64,7 +64,7 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 120,
+    marginTop: 100,
     marginBottom: 10
   },
   button: {

@@ -12,6 +12,15 @@ export default {
           username, password
         }
       })
+    },
+    signup({ username, password }) {
+      return axios({
+        url: URL + 'account/signup',
+        method: 'post',
+        data: {
+          username, password
+        }
+      })
     }
   }
 }
