@@ -4,9 +4,9 @@ import axios from 'axios'
 
 export default {
   user: {
-    login ({ phone, password }) {
+    signIn ({ phone, password }) {
       return axios({
-        url: URL + 'account/login',
+        url: URL + 'account/signIn',
         method: 'post',
         data: {
           phone, password

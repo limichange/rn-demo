@@ -10,19 +10,20 @@ export default class App extends React.Component {
     super(props)
   }
   state = {
-    phone: '',
-    password: ''
+    phone: '18752069857',
+    password: 'houyao'
   }
   login () {
     const { phone, password } = this.state
     api
       .user
-      .login({ phone, password })
+      .signIn({ phone, password })
       .then(res => {
+        alert(JSON.stringify(res.data))
         if (res.data.code === 200) {
           alert('登录成功')
         } else {
-          alert('登录失败，请重试')
+          alert(res.data.msg)
         }
       })
   }

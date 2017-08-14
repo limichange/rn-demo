@@ -18,9 +18,9 @@ export default class App extends React.Component {
       .signup({ phone, password })
       .then(res => {
         if (res.data.code === 200) {
-          alert('登录成功')
+          alert('注册成功')
         } else {
-          alert('登录失败，请重试')
+          alert(res.data.msg)
         }
       })
   }
