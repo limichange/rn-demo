@@ -33,7 +33,11 @@ export default class App extends React.Component {
 }
 
 const routerList = [{
+  name: '主面板', router: 'mainPanel'
+}, {
   name: '关于', router: 'about'
+}, {
+  name: 'loadingPanel', router: 'loadingPanel'
 }, {
   name: '欢迎页', router: 'home'
 }, {

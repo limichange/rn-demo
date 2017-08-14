@@ -17,6 +17,8 @@ import about from './about'
 import login from './login'
 import signup from './signup'
 import debugPanel from './debugPanel'
+import mainPanel from './mainPanel'
+import loadingPanel from './loadingPanel'
 
 const AppNavigator = StackNavigator(
   {
@@ -39,6 +41,16 @@ const AppNavigator = StackNavigator(
       name: 'debugPanel',
       description: 'debugPanel',
       screen: debugPanel,
+    },
+    mainPanel: {
+      name: 'mainPanel',
+      description: 'mainPanel',
+      screen: mainPanel,
+    },
+    loadingPanel: {
+      name: 'loadingPanel',
+      description: 'loadingPanel',
+      screen: loadingPanel,
     },
     about: {
       name: 'about',

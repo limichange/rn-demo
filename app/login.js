@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, Image, Keyboard } from 'react-native';
 import Button from './components/button'
 import storage from './storage'
+import style from './style'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ export default class App extends React.Component {
     
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>登录</Text>
+        <Text style={styles.title}>登录成功</Text>
         <TextInput
           returnKeyType={'next'}
           style={styles.input}
@@ -85,7 +86,8 @@ const styles = StyleSheet.create({
     fontFamily: 'PingFang SC',
     fontWeight: '200',
     fontSize: 50,
-    marginBottom: 30
+    marginBottom: 30,
+    color: style.color.green
   },
   input: {
     fontFamily: 'PingFang SC',
@@ -96,6 +98,7 @@ const styles = StyleSheet.create({
     height: 50,
     fontSize: 25,
     borderBottomColor: '#bbb',
+    // borderBottomColor: style.color.green,
     borderBottomWidth: 1,
     paddingTop: 3,
     paddingBottom: 3,
