@@ -15,7 +15,7 @@ export default {
     },
     signup({ phone, password }) {
       return axios({
-        url: URL + 'account/signup',
+        url: URL + 'account/signUp',
         method: 'post',
         data: {
           phone, password

@@ -8,8 +8,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      phone: '',
-      password: ''
+      phone: '18752069857',
+      password: 'houyao'
     };
   }
   signup({ phone, password }) {
