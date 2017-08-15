@@ -1,4 +1,5 @@
 import React from 'react';
+import storage from './storage'
 import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default class App extends React.Component {

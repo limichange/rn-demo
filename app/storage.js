@@ -24,4 +24,12 @@ var storage = new Storage({
   }
 })	
 
+storage.asyncLoad = async (params) => {
+  let result
+  await storage.load(params).then(res => {
+    result = res
+  })
+  return result
+}
+
 export default storage

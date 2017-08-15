@@ -19,6 +19,29 @@ import signup from './signup'
 import debugPanel from './debugPanel'
 import mainPanel from './mainPanel'
 import loadingPanel from './loadingPanel'
+import storage from './storage'
+
+storage.load({
+  key: 'token'
+}).then(res => {
+  // alert(JSON.stringify(res))
+})
+
+const token = storage.asyncLoad({
+  key: 'token'
+})
+
+try {
+  const value = await AsyncStorage.getItem('@MySuperStore:key');
+  if (value !== null) {
+    // We have data!!
+    console.log(value);
+  }
+} catch (error) {
+  // Error retrieving data
+}
+
+alert(token)
 
 const AppNavigator = StackNavigator(
   {

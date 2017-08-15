@@ -19,8 +19,11 @@ export default class App extends React.Component {
       .user
       .signIn({ phone, password })
       .then(res => {
-        alert(JSON.stringify(res.data))
         if (res.data.code === 200) {
+          storage.save({
+            key: 'token',
+            data: res.data.data.token
+          })
           alert('登录成功')
         } else {
           alert(res.data.msg)
