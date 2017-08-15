@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import home from './home'
+import homePanel from './homePanel'
 import about from './about'
 import login from './login'
 import signup from './signup'
@@ -20,28 +20,6 @@ import debugPanel from './debugPanel'
 import mainPanel from './mainPanel'
 import loadingPanel from './loadingPanel'
 import storage from './storage'
-
-storage.load({
-  key: 'token'
-}).then(res => {
-  // alert(JSON.stringify(res))
-})
-
-const token = storage.asyncLoad({
-  key: 'token'
-})
-
-try {
-  const value = await AsyncStorage.getItem('@MySuperStore:key');
-  if (value !== null) {
-    // We have data!!
-    console.log(value);
-  }
-} catch (error) {
-  // Error retrieving data
-}
-
-alert(token)
 
 const AppNavigator = StackNavigator(
   {
@@ -55,10 +33,10 @@ const AppNavigator = StackNavigator(
       description: 'signup',
       screen: signup,
     },
-    home: {
-      name: 'home',
-      description: 'home',
-      screen: home,
+    homePanel: {
+      name: 'homePanel',
+      description: 'homePanel',
+      screen: homePanel,
     },
     debugPanel: {
       name: 'debugPanel',
@@ -85,6 +63,9 @@ const AppNavigator = StackNavigator(
     initialRouteName: 'debugPanel',
     headerMode: 'none',
     mode: Platform.OS === 'ios' ? 'modal' : 'card',
+    configureScene() {
+      return Navigator.SceneConfigs.PushFromRight;
+    }
   }
 );
 

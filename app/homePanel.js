@@ -9,6 +9,9 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 import Button from 'react-native-button';
 
 export default class App extends React.Component {
+  static navigationOptions = {
+    gesturesEnabled: false
+  }
   constructor(props) {
     super(props);
     this.state = { text: 'Useless Placeholder' };

@@ -26,9 +26,14 @@ var storage = new Storage({
 
 storage.asyncLoad = async (params) => {
   let result
-  await storage.load(params).then(res => {
-    result = res
-  })
+  try {
+    await storage.load(params).then(res => {
+      result = res
+      return res
+    })
+  } catch (e) {
+    return null
+  }
   return result
 }
 

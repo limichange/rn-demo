@@ -39,7 +39,7 @@ const routerList = [{
 }, {
   name: 'loadingPanel', router: 'loadingPanel'
 }, {
-  name: '欢迎页', router: 'home'
+  name: '欢迎页', router: 'homePanel'
 }, {
   name: '注册', router: 'signup'
 }, {

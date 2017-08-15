@@ -1,12 +1,24 @@
 import React from 'react';
 import storage from './storage'
 import { Image, StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { NavigationActions } from 'react-navigation'
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
+
+    setTimeout(() => {
+      storage.load({
+        key: 'token'
+      }).then(res => {
+        this.props.navigation.navigate('mainPanel')
+      }).catch(e => {
+        this.props.navigation.navigate('homePanel')
+      })
+    }, 1000)
+
     return (
       <View style={styles.container}>
         <View style={{ top: 210, position: 'absolute', height: '100%', width: '100%' }}>
