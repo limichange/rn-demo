@@ -37,6 +37,8 @@ const routerList = [{
 }, {
   name: '关于', router: 'about'
 }, {
+  name: 'imageUploadTestPanel', router: 'imageUploadTestPanel'
+}, {
   name: 'loadingPanel', router: 'loadingPanel'
 }, {
   name: '欢迎页', router: 'homePanel'

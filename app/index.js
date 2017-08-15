@@ -20,6 +20,7 @@ import debugPanel from './debugPanel'
 import mainPanel from './mainPanel'
 import loadingPanel from './loadingPanel'
 import storage from './storage'
+import imageUploadTestPanel from './imageUploadTestPanel'
 
 const AppNavigator = StackNavigator(
   {
@@ -27,6 +28,11 @@ const AppNavigator = StackNavigator(
       name: 'login',
       description: 'login',
       screen: login,
+    },
+    imageUploadTestPanel: {
+      name: 'imageUploadTestPanel',
+      description: 'imageUploadTestPanel',
+      screen: imageUploadTestPanel,
     },
     signup: {
       name: 'signup',
